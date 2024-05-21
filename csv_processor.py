@@ -14,19 +14,21 @@ with open(filename, "r") as file:
             continue
         else:
             member = {
-                'id': pieces[0].strip(), 
+                'id': int(pieces[0].strip()), 
                 'name': pieces[1].strip(), 
                 'email': pieces[2].strip(), 
-                'active': pieces[3].strip()
+                'active': pieces[3].strip() == 'true', 
+                'score': int(pieces[4].strip())
             }
             members.append(member)
         count = count + 1
 
 print ("*" * 25)
-
-active_members = [m for m in members if m['active'] == 'true']
+active_members = [m for m in members if m['active']]
 print (active_members)
 print ("*" * 25)
-
-inactive_members = [m for m in members if m['active'] != 'true']
+inactive_members = [m for m in members if not m['active']]
 print (inactive_members)
+
+for member in members:
+    print (f"{member['name']}:\t { '*' * member['score']}")
