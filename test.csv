@@ -1,0 +1,7 @@
+id, name, email, active
+1, Alice, alice@gmail.com, true
+2, Bob, bob@gmail.com, true
+3, Carol, carol@gmail.com, false
+4, Dan, dan@gmail.com, true
+
+
