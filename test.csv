@@ -1,6 +1,13 @@
 id, name, email, active, score
 1, Alice, alice@gmail.com, true, 15
 2, Bob, bob@gmail.com, true, 20
+
+99,asdfasd,asdfasd
+
 3, Carol, carol@gmail.com, false, 25 
-4, Dan, dan@gmail.com, true, 15
+4, Dan, dan@gmail.com, true, 45
 5, Eve, eve@gmail.com, false, 35
+
+
+ninety nine, Fred, fred@gmail.com, true, nothing
+

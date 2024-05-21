@@ -1,6 +1,11 @@
 class Member:
     #__init__ method is called when the object is instantiated
-    def __init__(self, id, name, email, active, score):
+    def __init__(self, 
+                id=0, 
+                name="", 
+                email="", 
+                active=False, 
+                score=0):
         # properties of the object are set in the __init__ method
         self.id = id
         self.name = name
