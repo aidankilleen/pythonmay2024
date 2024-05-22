@@ -3,8 +3,6 @@ from random import randint, random
 from Member import Member
 
 
-
-
 def test_function():
     print ("test function")
 
