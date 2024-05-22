@@ -9,6 +9,7 @@ count = 0
 
 result = {}
 colours = set()
+products = set()
 
 with open(filename, "r") as file:
 
@@ -20,6 +21,7 @@ with open(filename, "r") as file:
             r = Record(line)
 
             colours.add(r.colour)
+            products.add(r.product)
 
             if r.product in result:
                 # subsequent time this product is encountered
@@ -43,16 +45,24 @@ with open(filename, "r") as file:
 
         count +=1
 
+# file is automatically closed at the end of the
+# with block
+
+# sort the products
+sorted_products = sorted(products)
+sorted_colours = sorted(colours)
+
 # print the top row
 print("\t", end = "")
-for colour in colours:
+for colour in sorted_colours:
     print (colour, end="\t")
 print ("\n", end = "")
 
+
 # print one row for each product
-for product in result:
+for product in sorted_products:
     print (product, end="\t")
-    for colour in colours:
+    for colour in sorted_colours:
         if colour in result[product]:
             print (result[product][colour], end="\t")
         else: 
