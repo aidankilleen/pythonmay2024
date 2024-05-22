@@ -8,6 +8,7 @@ filename = sys.argv[1]
 count = 0
 
 result = {}
+colours = set()
 
 with open(filename, "r") as file:
 
@@ -17,6 +18,9 @@ with open(filename, "r") as file:
 
         if count >= 1:
             r = Record(line)
+
+            colours.add(r.colour)
+
             if r.product in result:
                 # subsequent time this product is encountered
                 # check if there is already an entry for this colour
@@ -39,4 +43,21 @@ with open(filename, "r") as file:
 
         count +=1
 
-print (result)
+# print the top row
+print("\t", end = "")
+for colour in colours:
+    print (colour, end="\t")
+print ("\n", end = "")
+
+# print one row for each product
+for product in result:
+    print (product, end="\t")
+    for colour in colours:
+        if colour in result[product]:
+            print (result[product][colour], end="\t")
+        else: 
+            print ("\t", end = "")
+
+
+    print("")
+
